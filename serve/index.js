@@ -10,7 +10,7 @@ app.use(bodyParser.json(), cors());
 app.post('/login', (req, res)=>{
   const token = jwt.sign({user: 'user name', admin: true}, 'ITVDN', {expiresIn: '5d'});
   try{
-    if(!(req.body.email === 'test@gmail.com' && req.body.password === '123456')){
+    if(!(req.body.email === 'u608110@gmail.com' && req.body.password === '12qwasZX')){
       throw new Error('this user not found');
     }
     res.status(200).send({accessToken: token});
