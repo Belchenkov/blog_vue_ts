@@ -1,36 +1,20 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png" /> -->
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-    </div>
+    <HeaderComponent v-if="$route.name !== 'Login' && $route.name !== '404'" />
     <router-view></router-view>
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
+import HeaderComponent from "./components/layout/HeaderComponent";
+import "@/assets/style/global.scss";
 
 export default {
   name: "app",
   components: {
-    // HelloWorld
+    HeaderComponent
   }
 };
 </script>
 
-<style>
-#app {
-  font-family: "Titillium Web", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-button {
-  font-family: inherit;
-}
-</style>
+<style></style>

@@ -4,6 +4,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import LoginPage from "../views/auth/LoginPage.vue";
+import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -25,6 +26,11 @@ const routes: Array<RouteConfig> = [
     path: "/login",
     name: "Login",
     component: LoginPage
+  },
+  {
+    path: "*",
+    name: "404",
+    component: PageNotFound
   }
 ];
 
