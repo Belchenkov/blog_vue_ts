@@ -1,0 +1,11 @@
+{
+  "message": "hello i18n !!",
+  "menu":{
+    "home": "Home",
+    "info": "Info",
+    "about": "About"
+  },
+  "buttons": {
+    "logout": "Logout"
+  }
+}
