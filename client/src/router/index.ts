@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 
+import i18n from "../i18n";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import LoginPage from "../views/auth/LoginPage.vue";
@@ -20,7 +21,10 @@ const routes: Array<RouteConfig> = [
   {
     path: "/about",
     name: "About",
-    component: About
+    component: About,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: "/login",
@@ -40,8 +44,18 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  let lang = to.params.lang;
+
+  if (!lang) {
+    lang = "en";
+  }
+
+  i18n.locale = "en";
+
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    const authUser = JSON.parse(window.localStorage.getItem('currentUser') || '{}');
+    const authUser = JSON.parse(
+      window.localStorage.getItem("currentUser") || "{}"
+    );
     if (authUser && authUser.accessToken) {
       next();
     } else {
