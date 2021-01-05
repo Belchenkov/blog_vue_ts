@@ -7,5 +7,12 @@
   },
   "buttons": {
     "logout": "Logout"
+  },
+  "footer-text":"Freebie Designed By Kishore for Project365.Design",
+  "article":{
+    "destination-title":"Destination",
+    "added-title":"Added",
+    "view-more-button": "More",
+    "back-button": "Back to atricles"
   }
 }
