@@ -2,9 +2,10 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 
 import i18n from "../i18n";
-import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Home from "../views/pages/Home.vue";
+import About from "../views/pages/About.vue";
 import LoginPage from "../views/auth/LoginPage.vue";
+import ArticlePage from "../views/pages/ArticlePage.vue";
 import PageNotFound from "../views/PageNotFound.vue";
 
 Vue.use(VueRouter);
@@ -22,6 +23,14 @@ const routes: Array<RouteConfig> = [
     path: "/about",
     name: "About",
     component: About,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/post/:id",
+    name: "Article",
+    component: ArticlePage,
     meta: {
       requiresAuth: true
     }
