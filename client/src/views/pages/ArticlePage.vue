@@ -1,14 +1,23 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
+import { namespace } from "vuex-class";
+
+const Articles = namespace('Articles');
 
 @Component({
   name: "ArticlePage"
 })
 export default class ArticlePage extends Vue {
-  content = "";
+  @Articles.State fromApi: any;
+  @Articles.Getter getById: any;
+  @Articles.Action fetchApi: any;
+
+  get articleById() {
+    return this.getById(this.$route.params.id);
+  }
 
   created() {
-    this.content = this.$route.params.item;
+    this.fetchApi();
   }
 
   backToArticles() {
@@ -21,19 +30,19 @@ export default class ArticlePage extends Vue {
   <el-row type="flex" justify="center" class="article-page">
     <el-col :xs="23" :sm="22" :md="20" :lg="16" :xl="16">
       <h1>
-        {{ content.title }}
+        {{ articleById.title }}
       </h1>
-      <img :src="content.image" alt="post picture" />
+      <img :src="articleById.image" alt="post picture" />
       <p>
-        {{ content.text }}
+        {{ articleById.text }}
       </p>
       <el-divider></el-divider>
       <el-row type="flex" justify="space-between">
         <el-col :span="12" class="article-information text-left">
-          {{ content.autor }}
+          {{ articleById.author }}
         </el-col>
         <el-col :span="12" class="article-information text-right">
-          {{ content.postTime }}
+          {{ articleById.postTime }}
         </el-col>
       </el-row>
       <el-row type="flex" justify="center" class="article-control">
