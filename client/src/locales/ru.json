@@ -15,5 +15,7 @@
     "added-title":"Автор",
     "view-more-button": "Узнать больше",
     "back-button": "Назад к главной"
-  }
+  },
+  "search": "Найти",
+  "tooltip":"Изменить вид"
 }
