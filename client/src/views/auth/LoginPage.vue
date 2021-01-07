@@ -14,6 +14,7 @@
           <el-form-item label="Email" prop="email">
             <el-input
               type="text"
+              data-test="email"
               v-model="ruleForm.email"
               autocomplete="off"
             ></el-input>
@@ -21,15 +22,18 @@
           <el-form-item label="Password" prop="password">
             <el-input
               type="password"
+              data-test="password"
               v-model="ruleForm.password"
               autocomplete="off"
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">
+            <el-button data-test="submit" type="primary" @click="submitForm('ruleForm')">
               Submit
             </el-button>
-            <el-button @click="resetForm('ruleForm')">Reset</el-button>
+            <el-button data-test="reset" @click="resetForm('ruleForm')">
+              Reset
+            </el-button>
           </el-form-item>
         </el-form>
       </div>
