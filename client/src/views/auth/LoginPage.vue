@@ -80,7 +80,7 @@ export default class LoginPage extends Vue {
     (this.$refs[formName] as any).validate((valid: any) => {
       if (valid) {
         axios
-          .post("http://localhost:3000/login", {
+          .post("https://serve-blog-vue-ts.herokuapp.com/login", {
             email: this.ruleForm.email,
             password: this.ruleForm.password
           })
