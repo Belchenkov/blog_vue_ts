@@ -1,6 +1,8 @@
-# Blog TSVue
+# Blog TS Vue
 
 > Create Blog Site no Vue + TS
+### [Demo](http://blog-vue-ts-ab.surge.sh)
+[![IMAGE ALT TEXT HERE](./uploads/screen.png)](https://nimb.ws/wnFEBV)
 
 ## Project setup
 ```
@@ -31,6 +33,3 @@ npm run test:e2e
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
