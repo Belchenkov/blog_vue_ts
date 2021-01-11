@@ -1,5 +1,6 @@
 {
   "message": "Работает i18n",
+  "empty-page":"Здесь пока пусто",
   "menu":{
     "home": "Главная",
     "info": "Инфо",
@@ -7,5 +8,14 @@
   },
   "buttons": {
     "logout": "Выход"
-  }
+  },
+  "footer-text":"Freebie разработано Kishore для Project365.Design",
+  "article":{
+    "destination-title":"Место",
+    "added-title":"Автор",
+    "view-more-button": "Узнать больше",
+    "back-button": "Назад к главной"
+  },
+  "search": "Найти",
+  "tooltip":"Изменить вид"
 }
